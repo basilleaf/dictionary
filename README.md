@@ -1,3 +1,3 @@
-a port of the dictionary app
+a port of a dictionary app
 
-just provides django API access to the database, no interface
+for now just providing django API access to database, no browser interface
