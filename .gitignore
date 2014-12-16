@@ -1,3 +1,5 @@
 secrets.py
 *.pyc
 venv
+settings_local.py
+secrets.py

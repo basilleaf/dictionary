@@ -17,7 +17,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'USER': DATABASE_USER,
         'PASSWORD': DATABASE_PASS,
-        'OPTIONS':{ 'unix_socket': '/private/var/mysql/mysql.sock'}
     }
 }
 
@@ -145,3 +144,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from settings_local import *
+except:
+    pass
