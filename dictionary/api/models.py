@@ -33,8 +33,8 @@ class Definition(models.Model):
     no = models.IntegerField(primary_key=True)
     term = models.ForeignKey("Term", db_column='term_no')
     definition = models.TextField(db_column='def') # Field renamed because it was a Python reserved word.
-    source = models.ForeignKey("Source")
-    context = models.ForeignKey("Context")
+    source = models.ForeignKey("Source", db_column='source_no')
+    context = models.ForeignKey("Context", db_column='context_no')
     class Meta:
         db_table = u'definitions'
 
@@ -45,8 +45,6 @@ class Definition(models.Model):
         super(Definition, self).save()
         cursor = connection.cursor()
         cursor.execute("replace into contexts_terms select context_id,term_id from definitions");
-
-
 
 class Context(models.Model):
     no = models.IntegerField(primary_key=True)
